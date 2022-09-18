@@ -15,7 +15,7 @@ public class ColorAbsorber : MonoBehaviour
         return meshRenderer.material;
     }
 
-    private void Start()
+    private void Awake()
     {
         meshRenderer = GetComponent<Renderer>();
     }
