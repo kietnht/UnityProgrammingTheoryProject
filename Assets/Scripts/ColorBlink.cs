@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE
 public class ColorBlink : ColorAbsorber
 {
     [SerializeField] int blinkCount = 5;
@@ -15,6 +16,7 @@ public class ColorBlink : ColorAbsorber
         baseMaterial = meshRenderer.material;
     }
 
+    // POLYMORPHISM
     public override void Receive(Material material)
     {
         base.Receive(material);

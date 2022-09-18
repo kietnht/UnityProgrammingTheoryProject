@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE
 public class ColorAura : ColorAbsorber
 {
     [SerializeField] GameObject auraVFX;
@@ -10,6 +11,7 @@ public class ColorAura : ColorAbsorber
     GameObject currentAura;
     const string nameModifier = "Aura";
 
+    // POLYMORPHISM
     public override void Receive(Material material)
     {
         base.Receive(material);

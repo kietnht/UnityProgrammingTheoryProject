@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE
 public class ColorExplosion : ColorAbsorber
 {
     public GameObject explodeVFX;
 
     Queue<Material> colorMaterialQueue = new Queue<Material>();
 
+    // POLYMORPHISM
     public override void Receive(Material material)
     {
         base.Receive(material);

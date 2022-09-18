@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     PlayerInput input;
     Vector3 moveDirection = Vector3.zero;
 
+    // ENCAPSULATION
     public ColorAbsorber ColorAbsorber { get { return colorAbsorber; } }
 
     void Start()
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
         ApplyNewControllable();
     }
 
+    // ABSTRACTION
     private void ApplyNewControllable()
     {
         if (controllable != null)
@@ -56,6 +58,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // ABSTRACTION
     private void SwitchControllable(Transform controlObject)
     {
         //unchild current

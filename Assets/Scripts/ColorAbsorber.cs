@@ -5,11 +5,13 @@ public class ColorAbsorber : MonoBehaviour
 {
     protected Renderer meshRenderer;
 
+    // ENCAPSULATION
     public Color GetColor()
     {
         return meshRenderer.material.color;
     }
 
+    // ENCAPSULATION
     public Material GetMaterial()
     {
         return meshRenderer.material;
