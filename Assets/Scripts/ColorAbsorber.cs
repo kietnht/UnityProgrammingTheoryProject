@@ -17,7 +17,7 @@ public class ColorAbsorber : MonoBehaviour
 
     private void Start()
     {
-        meshRenderer = GetComponentInChildren<Renderer>();
+        meshRenderer = GetComponent<Renderer>();
     }
 
     public virtual void Receive(Material material)

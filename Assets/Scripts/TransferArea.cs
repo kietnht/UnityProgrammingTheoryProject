@@ -25,9 +25,9 @@ public class TransferArea : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        var receiver = other.gameObject.GetComponent<ColorAbsorber>();
-        if (receiver == null) return;
+        var player = other.gameObject.GetComponent<PlayerController>();
+        if (player == null) return;
 
-        receiver.Receive(material);
+        player.ColorAbsorber.Receive(material);
     }
 }

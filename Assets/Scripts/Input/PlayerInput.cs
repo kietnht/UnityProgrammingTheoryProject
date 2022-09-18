@@ -9,6 +9,12 @@ public class PlayerInput : MonoBehaviour
     [Header("Input Values")]
     public Vector2 moveVector;
     public Vector2 lookVector;
+    public bool isFire;
+
+    public Vector2 mouseLocation
+    {
+        get { return Mouse.current.position.ReadValue(); }
+    }
 
     InputMap inputMap;
 
@@ -21,7 +27,28 @@ public class PlayerInput : MonoBehaviour
         inputMap.Player.Move.canceled += _ => OnMoveCanceled();
         inputMap.Player.Look.performed += OnLook;
         inputMap.Player.Look.canceled += _ => OnLookCanceled();
+        inputMap.Player.Fire.performed += OnFire;
+        inputMap.Player.Fire.canceled += _ => OnFireCanceled();
+    }
 
+    public bool ConsumeFire()
+    {
+        if(isFire)
+        {
+            isFire = false;
+            return true;
+        }
+        return false;
+    }
+
+    private void OnFire(InputAction.CallbackContext context)
+    {
+        isFire = true;
+    }
+
+    private void OnFireCanceled()
+    {
+        isFire = false;
     }
 
     void OnEnable()

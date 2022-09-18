@@ -30,7 +30,9 @@ public class ColorMixer : ColorAbsorber
     private void OnTriggerEnter(Collider other)
     {
         otherObject = other.gameObject;
-        otherAbsorber = other.gameObject.GetComponent<ColorAbsorber>();
+        var player = other.gameObject.GetComponent<PlayerController>();
+        otherAbsorber = player.ColorAbsorber;
+        print(other.gameObject.name);
         if (otherAbsorber == null) return;
         Receive(otherAbsorber.GetMaterial());
     }
